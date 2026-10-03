@@ -42,3 +42,18 @@ vim.opt.mouse = "a"
 
 -- Sync Nvim with default clipboard
 vim.opt.clipboard = "unnamedplus"
+
+
+-- Smart Code Folding
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldlevel = 99
+
+-- Re-evaluate folding after Treesitter attaches to the buffer
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function()
+    vim.opt_local.foldmethod = "expr"
+    vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+  end,
+})
+

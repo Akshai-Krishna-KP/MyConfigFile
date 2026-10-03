@@ -34,6 +34,7 @@ require("lazy").setup({
     { import = "plugins.comments" }, -- Do comments for all langauge
     { import = "plugins.neotree" }, -- File Explorer plugins
     { import = "plugins.bufferline" }, -- Plugins that show multiple file in buffer
+    { import = "plugins.indent" }, -- Bring line to tabspace
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
